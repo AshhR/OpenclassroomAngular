@@ -1,5 +1,5 @@
-import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-root',
@@ -7,17 +7,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  
-  isAuth = false;
-
-  lastUpdate = new Promise(
-  (resolve, reject) =>{
+  isAuth =false;
+  lastDate = new Promise<Date>((resolve , reject)=>{
     const date = new Date();
-    setTimeout(
-      ()=>{resolve(date);
-      }, 2000);
-    }  
-  )
+    setTimeout(() => {
+      resolve(date)
+    }, 2000);
+  });
+  
+  
   appareils = [
     {
       name: 'Machine à laver',

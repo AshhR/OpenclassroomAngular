@@ -1,8 +1,15 @@
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
-            <h2>Mes appareils</h2>
-            <p>Mis à jour le {{lastUpdate | async | date :'yMMMMEEEEd'|uppercase }} </p>
+            <h2>Mes appareils</h2> 
+            <!-- <p>
+            {{ lastUpdate | date [ : 'yMMMMEEEEd' [ : timezone [ : locale ] ] ] }}-->
+                <!-- Mis à jour le  : {{ lastUpdate | async | date: 'yMMMMEEEEd' | uppercase }}
+                {{ (lastUpdate |  async) | date | uppercase }}
+                
+            Mis à jour le : {{ (lastUpdate | async) | date: 'yMMMMEEEEd'[:'UTC':'fr']]] }} -->
+            <p>Mise a jour : {{lastDate | async| date :'d EEEE MMMM YYYY'| uppercase }} </p>
+
             <ul class="list-group">
                 <app-appareil *ngFor="let appareil of appareils"
                                 [appareilName]="appareil.name"
