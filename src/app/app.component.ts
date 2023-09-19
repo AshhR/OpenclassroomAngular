@@ -34,7 +34,9 @@ export class AppComponent implements OnInit{
 //     }
 // ];
 
-  appareils: any[];
+  appareils:any[
+    
+  ];
 
   constructor(privateService: AppareilService){
     setTimeout(
