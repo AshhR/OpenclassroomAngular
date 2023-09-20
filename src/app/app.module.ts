@@ -4,10 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppareilComponent } from './appareil/appareil.component';
 import { AppareilService } from './services/appareil.service';
+import { HostComponent } from './host/host.component';
 @NgModule({
   declarations: [
     AppComponent,
-    AppareilComponent
+    AppareilComponent,
+    HostComponent
   ],
   imports: [
     BrowserModule,
