@@ -1,4 +1,4 @@
-import { Component,OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AppareilService } from './services/appareil.service';
 
 
@@ -19,36 +19,25 @@ export class AppComponent implements OnInit{
   });
   
   
-//   appareils = [
-//     {
-//       name: 'Machine à laver',
-//       status: 'allumé'
-//     },
-//     {
-//       name: 'Télévision',
-//       status: 'allumé'
-//     },    
-//     {
-//       name: 'Ordinateur',
-//       status: 'éteint'
-//     }
-// ];
 
-  appareils:any[
-    
-  ];
+  appareils!: any[];
+  //Le Vartiable! permet de déclarer en désactivant la vérification de la propriété
 
-  constructor(privateService: AppareilService){
+  constructor(private appareilService: AppareilService){
     setTimeout(
       () => {
         this.isAuth = true;
       
     },  4000);
   }
-  onAllumer(){
-    console.log("on allume tout")
-  }
+
   ngOnInit() {
     this.appareils = this.appareilService.appareils;
+  }
+  onAllumer(){
+    this.appareilService.switchOnAll();
+  }
+  onEteindre(){
+    this.appareilService.switchOfAll();
   }
 }
