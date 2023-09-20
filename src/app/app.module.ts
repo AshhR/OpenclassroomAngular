@@ -4,9 +4,15 @@ import { FormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { AppareilComponent } from './appareil/appareil.component';
 import { AppareilService } from './services/appareil.service';
-
 import { AuthComponent } from './auth/auth.component';
 import { AppareilViewComponent } from './appareil-view/appareil-view.component';
+import { Routes, RouterModule } from '@angular/router';
+import { BootstrapOptions } from '@angular/core';
+const appRoutes: Routes= [
+  {path: 'appareils', component: AppareilViewComponent},
+  {path: 'auth', component: AuthComponent },
+  {path: '',component: AppareilViewComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -16,7 +22,8 @@ import { AppareilViewComponent } from './appareil-view/appareil-view.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [
     AppareilService
