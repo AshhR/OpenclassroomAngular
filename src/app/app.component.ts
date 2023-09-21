@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AppareilService } from './services/appareil.service';
+import { Component } from '@angular/core';
+
 
 
 @Component({
