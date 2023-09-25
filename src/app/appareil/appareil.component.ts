@@ -6,9 +6,10 @@ import { AppareilService } from '../services/appareil.service';
   styleUrls: ['./appareil.component.scss']
 })
 export class AppareilComponent implements OnInit {
-  @Input() appareilName: string ='';
-  @Input() appareilStatus: string = '';
+  @Input() appareilName!: string ;
+  @Input() appareilStatus!: string;
   @Input() indexOfAppareil!: number ;
+  @Input() id!: number;
   //indexOfAppreil est créé avec le ! pour empèche la vérification de l'initialisation
 constructor(private appareilService: AppareilService){}
 
