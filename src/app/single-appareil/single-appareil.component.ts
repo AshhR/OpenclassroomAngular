@@ -1,6 +1,8 @@
 import { Component,OnInit } from '@angular/core';
 import { AppareilService } from '../services/appareil.service';
 import { ActivatedRoute } from '@angular/router';
+//import { AuthService } from '../services/auth.service';
+
 @Component({
   selector: 'app-single-appareil',
   templateUrl: './single-appareil.component.html',
@@ -9,6 +11,13 @@ import { ActivatedRoute } from '@angular/router';
 export class SingleAppareilComponent implements OnInit {
     name:string ='Appareils';
     status:string ='Statut' ;
+   // authCheck :boolean=false;
+  
+  /*checkSign(){
+    if (this.authCheck=this.authService.isAuth){
+      return this.SingleAppareilComponent.checkSign():true ;
+    }
+  }*/
 
   constructor (private appareilService: AppareilService,
                       private route: ActivatedRoute){

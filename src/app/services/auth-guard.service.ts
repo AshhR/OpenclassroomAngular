@@ -11,7 +11,9 @@ export class AuthGuard {
                 private router: Router){}
 
     canActivate(
-        route: ActivatedRouteSnapshot, state: RouterStateSnapshot):boolean |Observable<boolean>| Promise<boolean>| boolean{
+        route: ActivatedRouteSnapshot, 
+        state: RouterStateSnapshot):boolean |Observable<boolean>    
+                                    | Promise<boolean>{
 
     if(this.authService.isAuth){
         return true;
