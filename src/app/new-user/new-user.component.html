@@ -20,8 +20,13 @@
                 <option value="Pisse">Pisse</option>
             </select>
         </div>
+        <div formArrayName="hobbies">
+            <h3>Vos hobbies</h3>
+            <div class="form-group" *ngFor="let hobbyControl of getHobbies().controls;
+                 let i = index"></div>
+        </div>
         <button class="btn btn-primary" type="submit" 
                 [disabled]="userForm.invalid"> Soumettre </button>
-
+        
     </form>
 </div>

@@ -35,14 +35,19 @@ export class NewUserComponent implements OnInit {
         formValue['lastName'],
         formValue['email'],
         formValue['drinkPreference'],
-        formValue['hobbies']?formValue['hobbies']:[]
+        formValue['hobbies'] ? formValue['hobbies']:[]
         );
       this.userService.addUser(newUser);
       this.router.navigate(['/users']);
     }
-    gethobbies(){
+  
+    getHobbies(){
       return this.userForm.get('hobbies') as FormArray;
   }
+  onAddHobby(){
+      const newHobbyControl = this.formBuilder.control('',Validators.required);
+      this.getHobbies().push(newHobbyControl);
+    } 
 
     
   }
