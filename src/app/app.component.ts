@@ -20,17 +20,7 @@ export class AppComponent implements OnInit, OnDestroy {
             (value:number)=> {
           this.secondes = value;        
         }
-        
-        /*,
-            (error:any) => {
-              console.log('Une erreur a été détectée');
-        },
-            () =>{
-          console.log('finis!');
-        }*/
-
       );
-
     }
     ngOnDestroy(): void {
       this.counterSubscription.unsubscribe();

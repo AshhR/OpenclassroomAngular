@@ -41,7 +41,6 @@ export class AppareilViewComponent implements OnInit {
       }
     );
     this.appareilService.emitAppareilSubject();
-    
   }
   onAllumer(){
     this.appareilService.switchOnAll();
