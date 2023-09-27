@@ -15,7 +15,7 @@ import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserService } from './services/user.service';
 import { NewUserComponent } from './new-user/new-user.component';
-//import 'rxjs/Rx';
+import 'rxjs/Rx';
 
 const appRoutes: Routes= [
   {path: 'auth', component: AuthComponent },
