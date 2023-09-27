@@ -18,10 +18,10 @@ import { NewUserComponent } from './new-user/new-user.component';
 //import 'rxjs/Rx';
 
 const appRoutes: Routes= [
+  {path: 'auth', component: AuthComponent },
   {path: 'appareils',canActivate: [AuthGuard], component: AppareilViewComponent},
   {path: 'appareils/:id',component: SingleAppareilComponent},
   {path: 'edit',canActivate:[AuthGuard],component: EditAppareilComponent},
-  {path: 'auth', component: AuthComponent },
   {path:'users', component:UserListComponent},
   {path:'new-user', component:NewUserComponent},
   {path: '',component: AppareilViewComponent},
