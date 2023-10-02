@@ -15,17 +15,17 @@ import { EditAppareilComponent } from './edit-appareil/edit-appareil.component';
 import { UserListComponent } from './user-list/user-list.component';
 import { UserService } from './services/user.service';
 import { NewUserComponent } from './new-user/new-user.component';
-import 'rxjs/Rx';
+
 
 const appRoutes: Routes= [
   {path: 'auth', component: AuthComponent },
   {path: 'appareils',canActivate: [AuthGuard], component: AppareilViewComponent},
-  {path: 'appareils/:id',component: SingleAppareilComponent},
+  {path: 'appareils/:id',canActivate: [AuthGuard],component: SingleAppareilComponent},
   {path: 'edit',canActivate:[AuthGuard],component: EditAppareilComponent},
-  {path:'users', component:UserListComponent},
-  {path:'new-user', component:NewUserComponent},
-  {path: '',component: AppareilViewComponent},
-  {path:'not-found', component: FourOhFourComponent},
+  {path: 'users',canActivate: [AuthGuard], component:UserListComponent},
+  {path: 'new-user',canActivate: [AuthGuard], component:NewUserComponent},
+  {path: '',component: AuthComponent},
+  {path: 'not-found', component: FourOhFourComponent},
   {path: '**',redirectTo:'/not-found'}
 ];
 @NgModule({
